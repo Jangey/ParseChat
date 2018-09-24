@@ -25,6 +25,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             configuration.server = "https://aqueous-crag-85429.herokuapp.com/parse"
         }))
         
+        // keep previous user stay in the app
+        if PFUser.current() != nil {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            // view controller currently being set in Storyboard as default will be overridden
+            window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "AuthenticatedViewController")
+        }
+        
         return true
     }
 
