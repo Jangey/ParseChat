@@ -20,9 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.initialize(with: ParseClientConfiguration(block: { (configuration: ParseMutableClientConfiguration) in
             //configuration.applicationId = "CodePath-Parse"
             //configuration.server = "http://45.79.67.127:1337/parse"
+            
             configuration.applicationId = "Instagram"
-            //configuration.clientKey = "wlm23920gma110sdt21shj"  // set to nil assuming you have not set clientKey
+            configuration.clientKey = "wlm23920gma110sdt21shj"  // set to nil assuming you have not set clientKey
             configuration.server = "https://aqueous-crag-85429.herokuapp.com/parse"
+            
         }))
         
         // keep previous user stay in the app
