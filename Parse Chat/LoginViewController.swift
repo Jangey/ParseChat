@@ -14,7 +14,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
-    let alertController = UIAlertController(title: "Title", message: "Message", preferredStyle: .alert)
+    //let alertController = UIAlertController(title: "Title", message: "Message", preferredStyle: .alert)
     
     
     override func viewDidLoad() {
@@ -35,6 +35,7 @@ class LoginViewController: UIViewController {
             , error: Error?) in
             if let error = error {
                 print(error.localizedDescription)
+                self.errorPage(title: "title", message: "message")
             } else {
                 print("User Registered successfully")
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
@@ -45,18 +46,30 @@ class LoginViewController: UIViewController {
     @IBAction func tapLogin(_ sender: Any) {
         PFUser.logInWithUsername(inBackground: usernameField.text!, password: passwordField.text!) { (user: PFUser?
             , error: Error?) in
-            if user != nil {
+            
+            if user == nil {
+                self.invaildInput(title: "title", message: "message")
+            } else {
                 print("Loged in Success!")
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
             }
         }
+    }
+    
+    func invaildInput (title: String, message: String) {
+        let alertController = UIAlertController(title: "Invaild input", message:
+            "Please check username or password is correct.", preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default,handler: nil))
         
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func errorPage (title: String, message: String) {
+        let alertController = UIAlertController(title: "Error", message:
+            "Something error, please try again.", preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default,handler: nil))
         
-        let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
-            // handle response here.
-        }
-        // add the OK action to the alert controller
-        alertController.addAction(OKAction)
+        self.present(alertController, animated: true, completion: nil)
     }
     
 }
