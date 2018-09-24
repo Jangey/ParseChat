@@ -89,14 +89,32 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1ae-6b-Wbb">
+                                <rect key="frame" x="0.0" y="148" width="414" height="714"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatCell" id="jgZ-GD-a0M" customClass="ChatCell" customModule="Parse_Chat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jgZ-GD-a0M" id="Vlh-ev-fxz">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="beM-3C-qqz" firstAttribute="leading" secondItem="kMU-XF-QSa" secondAttribute="leading" constant="20" id="1eD-VZ-XfI"/>
                             <constraint firstItem="kMU-XF-QSa" firstAttribute="trailing" secondItem="beM-3C-qqz" secondAttribute="trailing" constant="70" id="BA1-YH-wad"/>
+                            <constraint firstItem="1ae-6b-Wbb" firstAttribute="bottom" secondItem="kMU-XF-QSa" secondAttribute="bottom" id="JI0-F9-Hrr"/>
                             <constraint firstItem="beM-3C-qqz" firstAttribute="top" secondItem="kMU-XF-QSa" secondAttribute="top" constant="20" id="eoP-YO-t6E"/>
+                            <constraint firstItem="1ae-6b-Wbb" firstAttribute="leading" secondItem="kMU-XF-QSa" secondAttribute="leading" id="hKE-Nf-ool"/>
                             <constraint firstItem="BDT-v9-i0N" firstAttribute="top" secondItem="kMU-XF-QSa" secondAttribute="top" constant="20" id="kVb-qJ-iFA"/>
+                            <constraint firstItem="1ae-6b-Wbb" firstAttribute="trailing" secondItem="kMU-XF-QSa" secondAttribute="trailing" id="kxU-xJ-MhA"/>
                             <constraint firstItem="kMU-XF-QSa" firstAttribute="trailing" secondItem="BDT-v9-i0N" secondAttribute="trailing" constant="20" id="pvV-vj-NuR"/>
+                            <constraint firstItem="1ae-6b-Wbb" firstAttribute="top" secondItem="beM-3C-qqz" secondAttribute="bottom" constant="10" id="tLd-i2-rUo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kMU-XF-QSa"/>
                     </view>
@@ -109,11 +127,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="chatMessageField" destination="beM-3C-qqz" id="2QB-AB-bO5"/>
+                        <outlet property="tableView" destination="1ae-6b-Wbb" id="E0W-u5-wNF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n8m-kf-fQm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1908" y="127.28635682158921"/>
+            <point key="canvasLocation" x="1907.2463768115942" y="127.23214285714285"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="00b-Hc-28L">
