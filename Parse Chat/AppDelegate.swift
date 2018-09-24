@@ -26,7 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }))
         
         // keep previous user stay in the app
-        if PFUser.current() != nil {
+        if let currentUser = PFUser.current() {
+            print("Welcome back \(currentUser.username!) 😀")
+                
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             // view controller currently being set in Storyboard as default will be overridden
             window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "AuthenticatedViewController")

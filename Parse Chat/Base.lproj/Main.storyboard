@@ -77,29 +77,54 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BDT-v9-i0N">
-                                <rect key="frame" x="358" y="108" width="36" height="30"/>
+                                <rect key="frame" x="358" y="103" width="36" height="30"/>
                                 <state key="normal" title="Send"/>
                                 <connections>
                                     <action selector="tapSend:" destination="KkD-jv-fPP" eventType="touchUpInside" id="NLP-TQ-Pig"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="beM-3C-qqz">
-                                <rect key="frame" x="20" y="108" width="324" height="30"/>
+                                <rect key="frame" x="20" y="103" width="324" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1ae-6b-Wbb">
-                                <rect key="frame" x="0.0" y="148" width="414" height="714"/>
+                                <rect key="frame" x="0.0" y="143" width="414" height="719"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatCell" id="jgZ-GD-a0M" customClass="ChatCell" customModule="Parse_Chat" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatCell" rowHeight="97" id="jgZ-GD-a0M" customClass="ChatCell" customModule="Parse_Chat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="97"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jgZ-GD-a0M" id="Vlh-ev-fxz">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="96.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bra-y4-Vsg">
+                                                    <rect key="frame" x="20" y="10" width="79" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message!!!!!!!!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NpI-5r-yrz">
+                                                    <rect key="frame" x="19.999999999999993" y="41" width="108.33333333333331" height="20.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Bra-y4-Vsg" firstAttribute="top" secondItem="Vlh-ev-fxz" secondAttribute="top" constant="10" id="5Vg-8x-abJ"/>
+                                                <constraint firstItem="Bra-y4-Vsg" firstAttribute="leading" secondItem="Vlh-ev-fxz" secondAttribute="leading" constant="20" id="FZI-a7-Hye"/>
+                                                <constraint firstItem="NpI-5r-yrz" firstAttribute="leading" secondItem="Vlh-ev-fxz" secondAttribute="leading" constant="20" id="OcX-Z0-bSK"/>
+                                                <constraint firstItem="NpI-5r-yrz" firstAttribute="top" secondItem="Bra-y4-Vsg" secondAttribute="bottom" constant="10" id="Ymq-zz-hpl"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="NpI-5r-yrz" secondAttribute="bottom" constant="10" id="nnT-Ct-2ri"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="messageLabel" destination="NpI-5r-yrz" id="RCF-gI-p4f"/>
+                                            <outlet property="usernameLabel" destination="Bra-y4-Vsg" id="nxa-jC-LyI"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -109,9 +134,9 @@
                             <constraint firstItem="beM-3C-qqz" firstAttribute="leading" secondItem="kMU-XF-QSa" secondAttribute="leading" constant="20" id="1eD-VZ-XfI"/>
                             <constraint firstItem="kMU-XF-QSa" firstAttribute="trailing" secondItem="beM-3C-qqz" secondAttribute="trailing" constant="70" id="BA1-YH-wad"/>
                             <constraint firstItem="1ae-6b-Wbb" firstAttribute="bottom" secondItem="kMU-XF-QSa" secondAttribute="bottom" id="JI0-F9-Hrr"/>
-                            <constraint firstItem="beM-3C-qqz" firstAttribute="top" secondItem="kMU-XF-QSa" secondAttribute="top" constant="20" id="eoP-YO-t6E"/>
+                            <constraint firstItem="beM-3C-qqz" firstAttribute="top" secondItem="kMU-XF-QSa" secondAttribute="top" constant="15" id="eoP-YO-t6E"/>
                             <constraint firstItem="1ae-6b-Wbb" firstAttribute="leading" secondItem="kMU-XF-QSa" secondAttribute="leading" id="hKE-Nf-ool"/>
-                            <constraint firstItem="BDT-v9-i0N" firstAttribute="top" secondItem="kMU-XF-QSa" secondAttribute="top" constant="20" id="kVb-qJ-iFA"/>
+                            <constraint firstItem="BDT-v9-i0N" firstAttribute="top" secondItem="kMU-XF-QSa" secondAttribute="top" constant="15" id="kVb-qJ-iFA"/>
                             <constraint firstItem="1ae-6b-Wbb" firstAttribute="trailing" secondItem="kMU-XF-QSa" secondAttribute="trailing" id="kxU-xJ-MhA"/>
                             <constraint firstItem="kMU-XF-QSa" firstAttribute="trailing" secondItem="BDT-v9-i0N" secondAttribute="trailing" constant="20" id="pvV-vj-NuR"/>
                             <constraint firstItem="1ae-6b-Wbb" firstAttribute="top" secondItem="beM-3C-qqz" secondAttribute="bottom" constant="10" id="tLd-i2-rUo"/>
